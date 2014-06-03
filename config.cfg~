@@ -1,0 +1,49 @@
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
+const int SCREEN_BPP = 32;
+
+const int LEVEL_WIDTH = 2*1280;
+const int LEVEL_HEIGHT = 480;
+
+const int robin_WIDTH = 56;
+const int robin_HEIGHT = 63;
+
+const int FRAMES_PER_SECOND = 10;
+
+    int score =0;
+    int health = 100;
+    int lives = 3;
+
+    const int coin_score = 10;
+    const int diamound_score = 40;
+
+        const int g = 6;
+
+        double offSet =0;
+        double voffset=80;
+
+   
+    bool quit = false;
+    bool levelwon=0;
+
+    const int no_of_levels=3;
+//////////////////////////////////////
+    const int TILE_WIDTH = 80;
+    const int TILE_HEIGHT = 80;
+    const int TOTAL_TILES = (LEVEL_WIDTH/80) * (LEVEL_HEIGHT/80);
+    const int TILE_SPRITES = 2*10 + 7;
+
+    const int blank =0;
+    const int coin_type = 22;
+    const int coin_row = 3;
+    const int coin_col = 5;
+
+    const int diamound_type = 21;
+    const int diamound_row = 1;
+    const int diamound_col = 12;
+
+    const int tiletype_en1 = 25;
+
+    const int door_type =23; // +1
+
+ const int cols=3,row=10;
