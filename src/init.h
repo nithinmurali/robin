@@ -21,7 +21,7 @@ Mix_Chunk *jumpsou = NULL;
 Mix_Chunk *diamoundsou = NULL;
 
 
-int level =1;
+int level =2;
 bool first=0; // for intial vvelocity problem
 bool robindead;
 

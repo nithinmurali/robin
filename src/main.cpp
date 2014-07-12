@@ -40,6 +40,7 @@ int main( int argc, char* args[] )
 
         //Clip the tile sheeti
         if( Mix_PlayMusic( music, -1 ) == -1 ) { return 1; }
+
         clip_tiles();
 
         if(!welcome)return 1;
@@ -48,7 +49,6 @@ int main( int argc, char* args[] )
         SDL_Delay(6000);
 
         robin robinp;
-        robinp.set_clips();
 
     while(quit ==false)
     {

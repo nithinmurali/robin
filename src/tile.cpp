@@ -6,6 +6,8 @@ SDL_Rect clipscoin[ 15 ];
 SDL_Rect clipsdiamound[13];
 SDL_Rect clipsheart[ TILE_SPRITES ];
 
+const int enemy_type = 26;
+const int blank_tile =  0;
 
 class Tile
 {
@@ -15,14 +17,11 @@ class Tile
 
     //The tile type
 
-
-
-
     public:
 
         bool isanim;
         int frame;
-        int frames;
+        int total_frames;
         int collisionframe;
         bool collided;
         bool exausted;
@@ -45,15 +44,11 @@ class Tile
 void clean_up( Tile *tiles[] )
 {
 
-
-
     //Free the tiles
     for( int t = 0; t < TOTAL_TILES; t++ )
     {
         delete tiles[ t ];
     }
-
-    //Quit SDL
 
 }
 
@@ -106,7 +101,7 @@ bool set_tiles( Tile *tiles[] )
 {
     //The tile offsets
     int x = 0, y = 0;
-std::ifstream map;
+    std::ifstream map;
     //Open the map
 
     char levfile[20]="levels/robin";
@@ -157,14 +152,14 @@ std::ifstream map;
         {
             //cout<<"in tyile"<<endl;
             if(tileType==25)
-            {   tiles[ t ] = new Tile( x, y, 0 );
+            {   tiles[ t ] = new Tile( x, y, blank_tile );
 
                 load_enemy(x,y,1);
 
             }
             else if(tileType==26)
             {
-                tiles[ t ] = new Tile( x, y, 0 );
+                tiles[ t ] = new Tile( x, y, blank_tile );
                  load_enemy(x,y,2);
 
             }
@@ -221,7 +216,7 @@ Tile::Tile( int x, int y, int tileType )
     if(type == coin_type )
     {
         isanim =1;
-        frames = coin_col*coin_row;
+        total_frames = coin_col*coin_row;
         frame =0;
         collided =0;
         exausted =0;
@@ -230,7 +225,7 @@ Tile::Tile( int x, int y, int tileType )
     else if(type == diamound_type)
     {
          isanim =1;
-        frames = diamound_col*diamound_row;
+        total_frames = diamound_col*diamound_row;
         frame =0;
         collided =0;
         exausted =0;
@@ -247,14 +242,14 @@ void Tile::show()
     {
         isvisible = 1;
         if(!isanim)
-        {//Show the tile
-           // cout<<"shown"<<endl;
+        {
+            //Show the tile
             apply_surface( box.x - camera.x, box.y - camera.y, tileSheet, screen, &clips[ type ] );
 
         }
         else
        {   if(type == coin_type)
-             {//cout<<"innn"<<endl;
+             {
                  if(!collided)
                   {
 
@@ -266,7 +261,7 @@ void Tile::show()
                  {
                      apply_surface( box.x - camera.x, box.y - camera.y, coin, screen, &clipscoin[ frame ] );
                      frame++;
-                     if(frame>=frames)
+                     if(frame>=total_frames)
                      exausted = 1;
                      type = blank;
 

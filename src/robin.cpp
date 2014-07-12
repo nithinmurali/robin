@@ -24,6 +24,8 @@ robin::robin()
     robincb.y= voffset;
     robincb.w=robin_WIDTH ;
     robincb.h=robin_HEIGHT;
+
+    set_clips();
 }
 
 
@@ -255,7 +257,6 @@ void robin::set_clips()
 	for(int i=0;i<nooffrms;i++)
 	{
 
-
         clipsRight[ i ].x =(robin_WIDTH)*i;
 		clipsRight[ i ].y = 0;
 		clipsRight[ i ].w = robin_WIDTH;
@@ -285,8 +286,6 @@ void robin::set_clips()
 
 
         //////////////////////add new clips here///////////
-
-
 
 	}
 }
