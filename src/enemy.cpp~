@@ -63,10 +63,11 @@ void enemy::set_clips()
 
         //////////////////////add new clips here///////////
     }
-        clipsdead[ 0 ].x = (width) * 3;
+     /*   clipsdead[ 0 ].x = (width) * 3;
 		clipsdead[ 0 ].y = height*2;
 		clipsdead[ 0 ].w = width;
 		clipsdead[ 0 ].h = height;
+*/
 
 }
 
