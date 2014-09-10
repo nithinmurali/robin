@@ -1,1 +1,0 @@
-g++ main.cpp -o game.out -lSDL -lSDL_image
