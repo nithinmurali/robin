@@ -1,4 +1,11 @@
 
+//////////////////////////////
+Running game
+ you need to have SDL1.2 library installed in your linux pc
+ then run ROBIN.out in src folder 
+
+
+
 change configz in config.cfg
 
 //////////////adding new levelz/////////////
@@ -8,3 +15,5 @@ rename to robin<level>.map
 ///////////////////////////////////
 
 keep level width to max 2*1280
+
+
