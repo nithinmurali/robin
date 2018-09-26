@@ -10,10 +10,13 @@ It has a level editor and the game.
 You will mostly need to install ![sdl 2.0](https://wiki.libsdl.org/Installation)
 
 If you are in ubuntu, this would do
-`
-sudo apt-get install libsdl2-2.0
-`
 
-Use the level editor (level editor/src/a.out) to create levels. scroll to change tiles and click to place them.
+```
+sudo apt-get install libsdl2-2.0
+```
+
+Use the level editor (lev editor/src/a.out) to create levels. scroll to change tiles and click to place them.
+
 Then place the generated robon.map file into the _levels_ folder in the formal robon<level_number>.map
+
 run the game using (src/ROBON.out)
